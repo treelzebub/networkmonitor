@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+apply from: "../gradle/common_android.gradle"
+android {
+    defaultConfig {
+        applicationId "net.treelzebub.offlineindicator"
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+}
+
+apply from: "../gradle/common_deps.gradle"
+dependencies {
+    implementation project(":netdetect")
+
+    implementation 'com.squareup.okhttp:okhttp:2.7.5'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+    implementation 'com.google.android.material:material:1.0.0'
+
+    androidTestImplementation "androidx.benchmark:benchmark:1.0.0-alpha02"
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+repositories {
+    mavenCentral()
+}
