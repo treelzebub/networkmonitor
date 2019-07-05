@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         logSetup()
 
         val connectionAwareViewModel = ConnectionAwareViewModel(this)
+        connectionAwareViewModel.poll(1000L)
         connectionAwareViewModel.cellQuality.observe(this, observer)
 //        connectionAwareViewModel.cellQuality.observe(this) {
 //            val color = CellQuality.Quality.fromString(it).color

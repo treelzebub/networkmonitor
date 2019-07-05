@@ -11,6 +11,7 @@
             android:fontFamily="monospace"
             android:textSize="12sp"
             android:layout_width="match_parent"
+            android:layout_marginBottom="4dp"
             android:layout_height="wrap_content"
             tools:text="Lorem ipsum dolor cold fva d aijdff aodijfa efiojad faoidjf aodijasd faoijsdf asdoijfaosidjfasdf asdfjasdfjasdofj asdlkjf ajsdf asdfojlaskdjf asdf"/>
 

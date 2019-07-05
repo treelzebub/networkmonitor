@@ -19,7 +19,7 @@ class ConnectivityReceiver : BroadcastReceiver() {
         log("Received Action: ${intent.action}",
             "isMetered: ${conn.isActiveNetworkMetered}",
             "isDefaultActive: ${conn.isDefaultNetworkActive}",
-            "Bandwidth kbps: ${conn.getNetworkCapabilities(conn.activeNetwork).linkDownstreamBandwidthKbps}",
+            "Bandwidth kbps: ${conn.getNetworkCapabilities(conn.activeNetwork)?.linkDownstreamBandwidthKbps ?: "No active network."}",
             "isWifi: ${conn.activeNetworkInfo?.type == ConnectivityManager.TYPE_WIFI}")
 
         updateIsNetworkAvailable(context)
@@ -31,6 +31,6 @@ class ConnectivityReceiver : BroadcastReceiver() {
 
     private fun updateIsNetworkAvailable(context: Context) {
         val connectivity = ContextCompat.getSystemService(context, ConnectivityManager::class.java) ?: return
-        log("Network Detailed State: " + connectivity.activeNetworkInfo.detailedState.toString())
+        log("Network Detailed State: " + connectivity.activeNetworkInfo?.detailedState?.toString())
     }
 }
