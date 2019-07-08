@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_log.view.*
 import net.treelzebub.offlineindicator.R
 import java.lang.AssertionError
+import java.time.Instant
 import kotlin.math.max
 
 class LogAdapter(
@@ -25,7 +26,8 @@ class LogAdapter(
             if (maxSize > 0 && log.size >= maxSize) {
                 log.removeAt(0)
             }
-            log.add(str)
+            val message = "[${Instant.now()}]\n$str"
+            log.add(message)
             notifyDataSetChanged()
             assert(log.size != maxSize)
         }

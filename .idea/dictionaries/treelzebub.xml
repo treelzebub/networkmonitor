@@ -2,6 +2,7 @@
   <dictionary name="treelzebub">
     <words>
       <w>gson</w>
+      <w>rssi</w>
     </words>
   </dictionary>
 </component>
